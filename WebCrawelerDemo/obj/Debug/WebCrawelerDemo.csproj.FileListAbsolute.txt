@@ -1,0 +1,11 @@
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\WebCrawelerDemo.exe.config
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\WebCrawelerDemo.exe
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\WebCrawelerDemo.pdb
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.csprojAssemblyReference.cache
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.csproj.CoreCompileInputs.cache
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.csproj.CopyComplete
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.exe
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.pdb
