@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B39E1408-9584-4E22-9AA7-0D70A5D86895}</ProjectGuid>
+    <ProjectGuid>{D35DBD26-E373-4D16-BD72-E0290E7D7008}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WebCrawelerDemo</RootNamespace>
-    <AssemblyName>WebCrawelerDemo</AssemblyName>
+    <RootNamespace>WebCrawlerDemo2</RootNamespace>
+    <AssemblyName>WebCrawlerDemo2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
+    <Compile Include="Article.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

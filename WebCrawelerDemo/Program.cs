@@ -12,6 +12,7 @@ namespace WebCrawelerDemo
         static void Main(string[] args)
         {
             StartCrawlerAsync();
+            
             Console.ReadLine();
 
         }

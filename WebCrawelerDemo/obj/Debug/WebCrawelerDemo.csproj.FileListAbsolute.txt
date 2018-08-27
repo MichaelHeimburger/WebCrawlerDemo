@@ -9,3 +9,8 @@ C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawe
 C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.csproj.CopyComplete
 C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.exe
 C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\obj\Debug\WebCrawelerDemo.pdb
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\System.Net.Http.dll
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\Michael\source\repos\WebCrawelerDemo\WebCrawelerDemo\bin\Debug\System.Security.Cryptography.X509Certificates.dll
