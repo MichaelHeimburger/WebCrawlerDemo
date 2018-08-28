@@ -13,32 +13,32 @@ namespace WebCrawlerDemo2
         static void Main(string[] args)
         {
 
-            GetEconomistAsync();
+            GetNBCNewsPoliticsAsync();
 
             Console.ReadLine();
 
 
 
         }
-       private static async Task GetEconomistAsync()
+       private static async Task GetNBCNewsPoliticsAsync()
         {
-            var url = "https://www.economist.com/sites/default/files/";
+            var url = "https://www.nbcnews.com/politics";
             var client = new HttpClient();
             var html = await client.GetStringAsync(url);
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
-            var newsdivs = doc.DocumentNode.Descendants("div").Where(x => x.Attributes["class"].Value == "section-teaser with-image").ToList();
+            var newsdivs = doc.DocumentNode.Descendants("span").Where(x => x.Attributes["class"].Value == "headline___38PFH").ToList();
             var newsList = new List<Article>();
             foreach(var div in newsdivs)
             {
                 var article = new Article
                 {
-                    Img = div.Descendants("img").FirstOrDefault().ChildAttributes("src").FirstOrDefault().Value,
-                    Title = div.Descendants("h3").FirstOrDefault().InnerText,
-                    Date = div.Descendants("time").FirstOrDefault().InnerText,
-                    Source = div.Descendants("span").Where(x => x.Attributes["class"].Value == "source").Single().InnerText,
-                    Preview = div.Descendants("p").Where(x => x.Attributes["class"].Value == "rubric-teaser").Single().InnerText,
-                    Link = div.Attributes.Where(x=>x.Value=="href").Single().Value
+
+                    //Img = div.ParentNode..FirstOrDefault().ChildAttributes("src").FirstOrDefault().Value,
+                    Title = div.InnerText,
+                    //Date = div.Descendants("time").FirstOrDefault().InnerText,
+                    //Img = div.ParentNode.ParentNode.ParentNode.ParentNode.ChildNodes.Where(x=>x.ChildNodes.Where(x=> x.ChildNodes.Where(x =>x.Attributes == "Picture") )))
+                    Link = div.ParentNode.Attributes.Where(x =>x.Name=="href").FirstOrDefault().Value
                 };
                 newsList.Add(article);
             }
