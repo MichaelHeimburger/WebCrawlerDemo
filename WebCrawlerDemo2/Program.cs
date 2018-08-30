@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Net.Http;
+using ScrapySharp.Extensions;
+using ScrapySharp;
+
 
 namespace WebCrawlerDemo2
 {
@@ -17,8 +20,6 @@ namespace WebCrawlerDemo2
 
             Console.ReadLine();
 
-
-
         }
        private static async Task GetNBCNewsPoliticsAsync()
         {
@@ -27,9 +28,10 @@ namespace WebCrawlerDemo2
             var html = await client.GetStringAsync(url);
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
-            var newsdivs = doc.DocumentNode.Descendants("span").Where(x => x.Attributes["class"].Value == "headline___38PFH").ToList();
+            var newsspans = doc.DocumentNode.CssSelect("span.headline___38PFH");
+            
             var newsList = new List<Article>();
-            foreach(var div in newsdivs)
+            foreach(var div in newsspans)
             {
                 var article = new Article
                 {
