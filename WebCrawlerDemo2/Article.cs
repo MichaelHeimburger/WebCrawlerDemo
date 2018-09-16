@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebCrawlerDemo2
 {
-    class Article
+    public class Article
     {
         public string Img { get; set; }
         public string Title { get; set; }
@@ -14,5 +14,6 @@ namespace WebCrawlerDemo2
         public string Preview { get; set; }
         public string Link { get; set; }
         public string Source { get; set; }
+        public string Category { get; set; }
     }
 }
