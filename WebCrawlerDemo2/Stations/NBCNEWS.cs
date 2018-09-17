@@ -9,11 +9,15 @@ namespace WebCrawlerDemo2
     class NBCNEWS : NewsStation
     {
 
-        public async Task NBCNEWS()
+        public async Task GetNews()
         {
-            var url = "https://www.nbcnews.com/politics";
-            var client = new System.Net.Http.HttpClient();
-            var html = await client.GetStringAsync(url);
+            var nbcurls =new List<string>() { "https://www.nbcnews.com/politics", "https://www.nbcnews.com/science", "https://www.nbcnews.com/world" };
+            Urls.AddRange(nbcurls);
+            await GetHtml();
+            
+            
+            
         }
+      
     }
 }

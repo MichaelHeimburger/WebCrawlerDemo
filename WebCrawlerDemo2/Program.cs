@@ -15,7 +15,8 @@ namespace WebCrawlerDemo2
     {
         static void Main(string[] args)
         {
-
+            NBCNEWS news = new NBCNEWS();
+            news.GetNews();
             //GetNBCNewsPoliticsAsync();
 
             Console.ReadLine();
