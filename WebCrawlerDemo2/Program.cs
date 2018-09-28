@@ -7,6 +7,7 @@ using HtmlAgilityPack;
 using System.Net.Http;
 using ScrapySharp.Extensions;
 using ScrapySharp;
+using System.Threading;
 
 
 namespace WebCrawlerDemo2
@@ -15,14 +16,16 @@ namespace WebCrawlerDemo2
     {
         static void Main(string[] args)
         {
+
             NBCNEWS news = new NBCNEWS();
             news.GetNews();
             //GetNBCNewsPoliticsAsync();
 
+
             Console.ReadLine();
             
         }
-       private static async Task<List<Article>> GetNBCNewsPoliticsAsync()
+        private static async Task GetNBCNewsPoliticsAsync()
         {
             var url = "https://www.nbcnews.com/politics";
             var client = new HttpClient();
@@ -30,7 +33,7 @@ namespace WebCrawlerDemo2
             var doc = new HtmlDocument();
             doc.LoadHtml(html);
             var newsspans = doc.DocumentNode.CssSelect("span.headline___38PFH");
-                
+
             var newsList = new List<Article>();
             foreach (var span in newsspans)
             {
@@ -46,6 +49,7 @@ namespace WebCrawlerDemo2
                 };
                 newsList.Add(article);
             }
+
 
         }
 
