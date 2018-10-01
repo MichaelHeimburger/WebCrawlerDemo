@@ -12,46 +12,56 @@ using System.Threading;
 
 namespace WebCrawlerDemo2
 {
+
     class Program
     {
+
         static void Main(string[] args)
         {
-
-            NBCNEWS news = new NBCNEWS();
-            news.GetNews();
-            //GetNBCNewsPoliticsAsync();
-
-
-            Console.ReadLine();
-            
-        }
-        private static async Task GetNBCNewsPoliticsAsync()
-        {
-            var url = "https://www.nbcnews.com/politics";
-            var client = new HttpClient();
-            var html = await client.GetStringAsync(url);
-            var doc = new HtmlDocument();
-            doc.LoadHtml(html);
-            var newsspans = doc.DocumentNode.CssSelect("span.headline___38PFH");
-
-            var newsList = new List<Article>();
-            foreach (var span in newsspans)
+            var task = GetNBCNewsPolitcsAsync();
+            task.Wait();
+            var x = task.Result;
+            foreach(Article article in x)
             {
-                var article = new Article
-                {
-
-                    //Img = div.ParentNode..FirstOrDefault().ChildAttributes("src").FirstOrDefault().Value,
-                    Title = span.InnerText,
-                    Source = "NBC News",
-                    Category = "Politics",
-                    Img = span.ParentNode.ParentNode.ParentNode.ParentNode.ChildNodes.CssSelect("picture").CssSelect("source").FirstOrDefault().Attributes.Where(x => x.Name == "srcset").FirstOrDefault().Value,
-                    Link = span.ParentNode.Attributes.Where(x => x.Name == "href").FirstOrDefault().Value
-                };
-                newsList.Add(article);
+                Console.WriteLine(article.Title);
             }
-
-
+            Console.ReadLine();
         }
+       
 
+        public static async Task<List<Article>> GetNBCNewsPolitcsAsync()
+        {
+            //var url = "https://www.nbcnews.com/politics";
+            var client = new HttpClient();
+            //var html = await client.GetStringAsync(url);
+            var nbcurls = new List<string>() { "https://www.nbcnews.com/politics", "https://www.nbcnews.com/science", "https://www.nbcnews.com/world" };
+            var htmlz = new List<string>();
+            var newsList = new List<Article>();
+            foreach (var url in nbcurls)
+            {
+                var html = await client.GetStringAsync(url);
+                htmlz.Add(html);
+                var doc = new HtmlDocument();
+                doc.LoadHtml(html);
+                var newsspans = doc.DocumentNode.CssSelect("span.headline___38PFH");
+                foreach (var span in newsspans)
+                {
+                    var article = new Article
+                    {
+
+                        //Img = div.ParentNode..FirstOrDefault().ChildAttributes("src").FirstOrDefault().Value,
+                        Title = span.InnerText,
+                        Source = "NBC News",
+                        Category = "Politics",
+                        Img = span.ParentNode.ParentNode.ParentNode.ParentNode.ChildNodes.CssSelect("picture").CssSelect("source").FirstOrDefault().Attributes.Where(x => x.Name == "srcset").FirstOrDefault().Value,
+                        Link = span.ParentNode.Attributes.Where(x => x.Name == "href").FirstOrDefault().Value
+                    };
+                    newsList.Add(article);
+                }
+
+            }
+            return newsList;
+        }
     }
 }
+
